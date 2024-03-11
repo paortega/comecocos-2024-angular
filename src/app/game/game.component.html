@@ -1,0 +1,14 @@
+<div tabindex="0" (keydown)="movePacman($event)" style="position: relative; width: 500px; height: 500px; border: 1px solid black;">
+    <div class="mark">
+        <b>Puntos: {{ score }}</b>
+        <button class="btn" (click)="startGame()">Play</button>
+        <button class="btn" (click)="stopGame()">Stop</button>
+    </div>
+    
+    <!-- <img src="../../assets/come-cocos.png" alt="Pacman" [style.left.px]="pacmanPositionX" [style.top.px]="pacmanPositionY" style="position: absolute;"> -->
+    <img [src]="comecocosImagen" alt="Pacman" [style.left.px]="pacmanPositionX" [style.top.px]="pacmanPositionY" style="position: absolute;">
+    <img *ngFor="let enemy of enemies" [src]="enemy.imageSrc" [style.left.px]="enemy.x" [style.top.px]="enemy.y" style="position: absolute;">
+    <img *ngFor="let diamond of diamonds" src="../../assets/diamon.png" [style.left.px]="diamond.x" [style.top.px]="diamond.y" style="position: absolute;">
+</div>
+
+
